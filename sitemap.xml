@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coding327.github.io/archives/1d15faa4.html</loc>
+    
+    <lastmod>2022-07-04</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/archives/f58d700f.html</loc>
     
     <lastmod>2022-07-03</lastmod>
@@ -56,7 +65,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/music/index.html</loc>
+    <loc>https://coding327.github.io/tags/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -65,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/index.html</loc>
+    <loc>https://coding327.github.io/music/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -112,7 +121,7 @@
 
   <url>
     <loc>https://coding327.github.io/</loc>
-    <lastmod>2022-07-03</lastmod>
+    <lastmod>2022-07-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -120,21 +129,21 @@
   
   <url>
     <loc>https://coding327.github.io/tags/hexo/</loc>
-    <lastmod>2022-07-03</lastmod>
+    <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coding327.github.io/tags/git/</loc>
-    <lastmod>2022-07-03</lastmod>
+    <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://coding327.github.io/tags/JavaScript/</loc>
-    <lastmod>2022-07-03</lastmod>
+    <lastmod>2022-07-04</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

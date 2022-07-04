@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>ES6模块化理解</title>
+      <link href="/archives/1d15faa4.html"/>
+      <url>/archives/1d15faa4.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h2><blockquote><p>vue中的模块化、组件化，把部分html，独立成一个.vue文件，这个文件我们组件。</p></blockquote><h3 id="es6模块化规范语法"><a href="#es6模块化规范语法" class="headerlink" title="es6模块化规范语法:"></a>es6模块化规范语法:</h3><ol><li>声明时导出，在声明变量、函数或类时前面加上export，但是这样导入时就得加上大括号</li><li>独立使用export声明，一个export关键字加上变量名列表，但是这样导入时就得加上大括号<ol><li>export { a, b, c}</li></ol></li><li>export和default联合使用，export default表示导出一个默认变量值，后面可接表达式</li></ol><blockquote><p>原始值都是不能成为指定对外接口=&gt;export和export default都可以直接导出函数、对象</p></blockquote><blockquote><p>export default后面不能接var？</p></blockquote><ul><li>default的本质是变量也是指定对外接口，而export default命令的本质是将后面的值，赋给default变量，所以可以直接将一个值写在export default之后。</li><li>直观解释default = var a = 1 或者说 b = var a = 1【很显然会报错】</li></ul><blockquote><p>大致说说export和export default的区别</p></blockquote><ol><li>export与export default均可用于导出常量、函数、文件、模块等</li><li>在一个文件或模块中，export、import可以有多个，export default仅有一个</li><li>通过export方式导出，在导入时要加{ }，export default则不需要</li><li>export导出的变量，import时导入该变量时会随着导出那个变量值的变化而变化；但是default不会，default拿的是值导出，export直接导出的是变量a</li></ol>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>git踩坑笔记</title>
       <link href="/archives/f58d700f.html"/>
       <url>/archives/f58d700f.html</url>
