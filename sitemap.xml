@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coding327.github.io/archives/b7bcb10.html</loc>
+    
+    <lastmod>2022-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/archives/4a17b156.html</loc>
+    
+    <lastmod>2022-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/archives/2835b457.html</loc>
+    
+    <lastmod>2022-07-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/archives/ae35e027.html</loc>
     
     <lastmod>2022-07-09</lastmod>
@@ -101,15 +128,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/index.html</loc>
-    
-    <lastmod>2022-06-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/about/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
@@ -119,7 +137,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/archives/4a17b156.html</loc>
+    <loc>https://coding327.github.io/categories/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -152,6 +170,27 @@
   
   <url>
     <loc>https://coding327.github.io/tags/JavaScript/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/node-js/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/express/</loc>
+    <lastmod>2022-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/npm/</loc>
     <lastmod>2022-07-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
