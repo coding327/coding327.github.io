@@ -69,3 +69,28 @@ body {
     /* 以下代表白色透明度为0.3 */
     background: rgba(255,255,255,.3);
   }
+
+/* 添加背景渐变色 */
+.site-brand-container {
+    background-image: linear-gradient(-225deg,
+        #2cd8d5 0%,
+        #c5c1ff 56%,
+        #ffbac3 100%,
+        #ddd6f3 0%);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+  }
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
