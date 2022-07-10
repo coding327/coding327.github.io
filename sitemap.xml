@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/index.html</loc>
+    <loc>https://coding327.github.io/music/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -83,7 +83,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/music/index.html</loc>
+    <loc>https://coding327.github.io/tags/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -149,5 +149,19 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://coding327.github.io/categories/hexo/</loc>
+    <lastmod>2022-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/categories/hexo/butterfly/</loc>
+    <lastmod>2022-07-10</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>
