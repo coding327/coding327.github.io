@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://coding327.github.io/archives/4a17b156.html</loc>
+    <loc>https://coding327.github.io/archives/5752f186.html</loc>
     
     <lastmod>2022-07-10</lastmod>
     
@@ -29,27 +29,9 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/archives/46390b34.html</loc>
+    <loc>https://coding327.github.io/archives/4a17b156.html</loc>
     
-    <lastmod>2022-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/archives/8869ea7f.html</loc>
-    
-    <lastmod>2022-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/archives/596552e8.html</loc>
-    
-    <lastmod>2022-07-09</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,43 +40,34 @@
   <url>
     <loc>https://coding327.github.io/archives/f58d700f.html</loc>
     
-    <lastmod>2022-07-09</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/archives/ae35e027.html</loc>
+    <loc>https://coding327.github.io/archives/46390b34.html</loc>
     
-    <lastmod>2022-07-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/archives/b7bcb10.html</loc>
-    
-    <lastmod>2022-07-09</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/archives/2835b457.html</loc>
+    <loc>https://coding327.github.io/archives/596552e8.html</loc>
     
-    <lastmod>2022-07-09</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/archives/5752f186.html</loc>
+    <loc>https://coding327.github.io/archives/8869ea7f.html</loc>
     
-    <lastmod>2022-07-09</lastmod>
+    <lastmod>2022-07-10</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -128,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/index.html</loc>
+    <loc>https://coding327.github.io/about/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -137,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/about/index.html</loc>
+    <loc>https://coding327.github.io/categories/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -175,97 +148,6 @@
     <priority>0.2</priority>
   </url>
   
-  <url>
-    <loc>https://coding327.github.io/tags/ES6/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/node-js/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/express/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/npm/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/Vue/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://coding327.github.io/categories/butterfly%E4%B8%BB%E9%A2%98/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/git/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/ES6/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/express/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/npm/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/JavaScript/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/Vue%E5%AD%A6%E4%B9%A0/</loc>
-    <lastmod>2022-07-10</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>
