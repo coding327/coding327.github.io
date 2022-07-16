@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/index.html</loc>
+    <loc>https://coding327.github.io/about/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/about/index.html</loc>
+    <loc>https://coding327.github.io/categories/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -224,14 +224,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/node-js/</loc>
+    <loc>https://coding327.github.io/tags/npm/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/npm/</loc>
+    <loc>https://coding327.github.io/tags/node-js/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -303,14 +303,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/node-js/</loc>
+    <loc>https://coding327.github.io/categories/npm/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/npm/</loc>
+    <loc>https://coding327.github.io/categories/node-js/</loc>
     <lastmod>2022-07-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
