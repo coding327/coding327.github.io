@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/index.html</loc>
+    <loc>https://coding327.github.io/music/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/music/index.html</loc>
+    <loc>https://coding327.github.io/tags/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -206,6 +206,20 @@
   
   <url>
     <loc>https://coding327.github.io/tags/git/</loc>
+    <lastmod>2022-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/%E5%9B%BE%E5%BA%8A/</loc>
+    <lastmod>2022-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/vscode/</loc>
     <lastmod>2022-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -254,20 +268,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2022-07-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/vscode/</loc>
-    <lastmod>2022-07-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/tags/Vue/</loc>
     <lastmod>2022-07-17</lastmod>
     <changefreq>weekly</changefreq>
@@ -299,6 +299,13 @@
   
   <url>
     <loc>https://coding327.github.io/categories/git%E6%8F%90%E4%BA%A4%E8%A7%84%E8%8C%83/</loc>
+    <lastmod>2022-07-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/categories/vscode/</loc>
     <lastmod>2022-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -340,7 +347,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/vscode/</loc>
+    <loc>https://coding327.github.io/categories/vscode/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -348,13 +355,6 @@
   
   <url>
     <loc>https://coding327.github.io/categories/JavaScript/</loc>
-    <lastmod>2022-07-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/categories/vscode/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-07-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
