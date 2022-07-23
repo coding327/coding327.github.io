@@ -15,10 +15,10 @@ a {
 
 /* 顶部背景图调整[解决index_top_img_height: full screen不生效] */
 #body-wrap {
-    overflow: hidden;
+    overflow: hidden!important;
 }
 #page-header {
-    height: 100vh;
+    height: 100vh!important;
 }
 
 

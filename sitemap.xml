@@ -155,7 +155,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/index.html</loc>
+    <loc>https://coding327.github.io/music/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/music/index.html</loc>
+    <loc>https://coding327.github.io/tags/index.html</loc>
     
     <lastmod>2022-06-19</lastmod>
     
@@ -198,6 +198,13 @@
   </url>
   
   <url>
+    <loc>https://coding327.github.io/tags/git/</loc>
+    <lastmod>2022-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/tags/React/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/git/</loc>
+    <loc>https://coding327.github.io/tags/Vue3/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -220,13 +227,6 @@
   
   <url>
     <loc>https://coding327.github.io/tags/ES6/</loc>
-    <lastmod>2022-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/tags/Vue3/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -284,13 +284,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/React/</loc>
-    <lastmod>2022-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/categories/git/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -305,7 +298,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/ES6/</loc>
+    <loc>https://coding327.github.io/categories/React/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -313,6 +306,13 @@
   
   <url>
     <loc>https://coding327.github.io/categories/Vue3/</loc>
+    <lastmod>2022-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/categories/ES6/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
