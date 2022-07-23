@@ -11,6 +11,15 @@
   </url>
   
   <url>
+    <loc>https://coding327.github.io/archives/1175bcc6.html</loc>
+    
+    <lastmod>2022-07-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/archives/eb3653c9.html</loc>
     
     <lastmod>2022-07-23</lastmod>
@@ -225,14 +234,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/React/</loc>
+    <loc>https://coding327.github.io/tags/git/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/git/</loc>
+    <loc>https://coding327.github.io/tags/React/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -267,13 +276,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/node-js/</loc>
-    <lastmod>2022-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/tags/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -282,6 +284,13 @@
   
   <url>
     <loc>https://coding327.github.io/tags/vscode/</loc>
+    <lastmod>2022-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/node-js/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -311,14 +320,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/React/</loc>
+    <loc>https://coding327.github.io/categories/git/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/git/</loc>
+    <loc>https://coding327.github.io/categories/React/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -353,14 +362,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/node-js/</loc>
+    <loc>https://coding327.github.io/categories/vscode/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/vscode/</loc>
+    <loc>https://coding327.github.io/categories/node-js/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
