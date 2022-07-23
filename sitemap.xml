@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coding327.github.io/archives/8ed1a3c9.html</loc>
+    
+    <lastmod>2022-07-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/archives/17deebbb.html</loc>
     
     <lastmod>2022-07-23</lastmod>
@@ -248,13 +257,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/Vue3/</loc>
-    <lastmod>2022-07-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/tags/JavaScript/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -263,6 +265,13 @@
   
   <url>
     <loc>https://coding327.github.io/tags/ES6/</loc>
+    <lastmod>2022-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/tags/Vue3/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -341,14 +350,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/Vue3/</loc>
+    <loc>https://coding327.github.io/categories/ES6/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/ES6/</loc>
+    <loc>https://coding327.github.io/categories/Vue3/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -376,14 +385,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/node-js/</loc>
+    <loc>https://coding327.github.io/categories/vscode/%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/vscode/%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://coding327.github.io/categories/node-js/</loc>
     <lastmod>2022-07-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
