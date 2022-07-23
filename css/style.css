@@ -17,8 +17,8 @@ a {
 #body-wrap {
     overflow: hidden!important;
 }
-#page-header {
-    height: 100vh!important;
+header#page-header {
+    height: 100vh;
 }
 
 
