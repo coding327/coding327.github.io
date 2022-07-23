@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>React笔记(二)</title>
+      <link href="/archives/95c573e2.html"/>
+      <url>/archives/95c573e2.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="脚手架创建React项目"><a href="#脚手架创建React项目" class="headerlink" title="脚手架创建React项目"></a>脚手架创建React项目</h2><mark class="hl-label green">eg：代表代码对照</mark> <mark class="hl-label pink">若文章有误，欢迎读者指出</mark> <blockquote><p>全局安装React脚手架<br><code>npm install -g create-react-app</code><br>构建一个my-app的项目<br><code>create-react-app my-app</code> 或 <code>npx create-react-app my-app</code></p></blockquote><blockquote><p>清除文件[全部删除]</p></blockquote><ul><li>App.css</li><li>App.test.js</li><li>index.css</li><li>logo.svg</li><li>reportWebVitals.js</li><li>setupTests.js</li></ul><blockquote><p>清除入口文件内容<br><strong>只保留下面这部分，严格模式等都清除</strong></p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"><span class="keyword">import</span> ReactDOM <span class="keyword">from</span> <span class="string">&#x27;react-dom/client&#x27;</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">&#x27;./App&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> root = ReactDOM.createRoot(<span class="built_in">document</span>.getElementById(<span class="string">&#x27;root&#x27;</span>))</span><br><span class="line">root.render(</span><br><span class="line">  <span class="xml"><span class="tag">&lt;<span class="name">App</span> /&gt;</span></span></span><br><span class="line">)</span><br></pre></td></tr></table></figure><blockquote><p>清除根组件【顶级组件】内容<br><strong>全部清除</strong></p></blockquote><blockquote><p>一般写个类组件，快捷键rcc</p></blockquote><blockquote><p>函数组件及注意事项【快捷键 <code>rfc</code>】</p></blockquote><ol><li>jsx必须得有唯一的根标签</li><li>函数名称大写，遵循大驼峰</li><li>函数组件没有实例=&gt;没有<code>new</code>=&gt;没有<code>this</code>，反之类组件有</li><li>函数组件没有生命周期，没有state状态，不能做首屏，发送请求，只能做展示使用[函数组件不能放数据状态,没有生命周期，没有实例，没有this,也不能使用高阶组件的语法糖(能使用高阶组件)]</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> App = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      hello world</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App</span><br></pre></td></tr></table></figure><blockquote><p>类组件及注意事项【快捷键 <code>rcc</code>】</p></blockquote><ol><li>jsx必须得有唯一的根标签</li><li>类组件名称大写，遵循大驼峰</li><li>类组件有实例=&gt;有<code>new</code>=&gt;有<code>this</code>，反之函数组件没有</li><li>类组件有生命周期，有状态，既能做首屏，发送请求，也能做展示使用</li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 类组件[重写了Component]</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        hello world</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App</span><br></pre></td></tr></table></figure><h3 id="eg1"><a href="#eg1" class="headerlink" title="eg1:"></a>eg1:</h3><figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 函数组件</span></span><br><span class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 函数组件方法调用不需要this，注意var声明</span></span><br><span class="line"><span class="keyword">var</span> handleClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> App1 = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">      hello world</span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App1</span><br><span class="line"></span><br><span class="line"><span class="comment">// 类组件[重写了Component]</span></span><br><span class="line"><span class="keyword">import</span> React, &#123; Component &#125; <span class="keyword">from</span> <span class="string">&#x27;react&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 类组件方法调用需要this，注意不需要var声明</span></span><br><span class="line">handleClick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">App2</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">render</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">      <span class="xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        hello world</span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">onClick</span>=<span class="string">&#123;this.handleClick&#125;</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> App2</span><br></pre></td></tr></table></figure><h2 id="React组件及分类"><a href="#React组件及分类" class="headerlink" title="React组件及分类"></a>React组件及分类</h2><p><strong>与Vue不同，React组件不需要注册，直接使用</strong></p><p>React组件：以js或者jsx为后缀的文件都可以是组件<br>安装了如下jsx代码提示插件，文件以.jsx后缀有代码提示<br><img src="https://cdn.jsdelivr.net/gh/coding327/PicGoImg@main/blog/pictures10010.png" alt="vscode-React提示插件"></p><blockquote><p>组件的划分：容器组件和展示组件。<br>类组件既可以是容器组件，也可以是展示组件，函数组件只能是展示组件。</p></blockquote><blockquote><p>函数组件  顶级组件</p></blockquote><ul><li>函数组件，本质就是一个函数，函数中有return，return后面跟jsx语法。jsx语法必须有唯一的跟标签。</li><li>函数名称大写，组件名称都大写。</li><li>类组件是react中常用的组件类型，是已class类继承react中Component组件来创建的。render函数必须有，</li><li>return后面跟jsx语法。</li></ul><p><strong>组件分为函数组件和类组件【后面很多地方一些功能都将会被划分为不同写法==&gt;类组件写法、函数组件写法和两者通用写法】</strong></p><p>小知识点：React与vue在启动上有点不同，React使用npm start启动省去了run，但是其它命令还是要带上run</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> React </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> React </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>React笔记(一)</title>
       <link href="/archives/3af4e880.html"/>
       <url>/archives/3af4e880.html</url>
@@ -285,31 +310,6 @@
     
     
     <entry>
-      <title>git操作</title>
-      <link href="/archives/46390b34.html"/>
-      <url>/archives/46390b34.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><mark class="hl-label green">若文章有误，欢迎读者指出</mark> <ul><li><p>1，初始化git ： git init</p></li><li><p>2，添加至缓存区 ：git add &lt;文件&gt; 如果添加当前文件夹所有 则 git add .</p><p>​      删除缓存区文件 ： git restore –staged &lt;文件&gt;</p><p>​                                       git reset HEAD &lt;文件&gt;</p></li><li><p>3，查看当前文件的状态 ：git status</p></li><li><p>4，提交文件 ： git commit [-m,-am] ‘描述’  -am 省略git add  步骤</p></li><li><p>5，查看提交记录  ： git log</p></li><li><p>6，使内容成一行显示 ：–pretty=oneline</p></li><li><p>7，查看文件与仓库的文件内容区别 ：git diff HEAD – &lt;文件&gt;</p></li><li><p>8，版本回退 ：git reset –hard HEAD^  回退一个版本  HEAD^^ 回退两个版本  HEAD~2 回退两个版本</p><p>​      git  reset –hard 唯一标识  跳转至唯一标识所在版本</p></li><li><p>9，查看所有的日志 ：git reflog</p></li><li><p>10 ，显示本地仓库文件目录 ： git ls-files</p></li><li><p>11，拉取文件 git pull</p></li><li><p>删除本地仓库文件的方式：</p><ul><li>在工作目录中删除文件</li><li>git add 添加删除的目录至缓存区</li><li>提交删除</li></ul></li><li><p>通过git rm 删除</p><ul><li>git rm &lt;文件&gt;</li></ul></li><li><p>添加远程仓库</p><ul><li>git remote add ‘名称’ 仓库地址</li></ul></li><li><p>第一次推送到远程仓库</p><ul><li>git push -u ‘名称’ master</li><li>其他推送 git push</li></ul></li><li><p>git 分支操作</p><ul><li>git checkout branch 切换到指定分支</li><li>git branch 查看所有分支，并标记当前所在分支</li><li>创建分支<ul><li>git checkout -b new_branch 新建分支并切换到新建分支</li></ul></li><li>合并分支<ul><li>git merge branch 合并分支  必须先切到主分支上</li></ul></li><li>重命名分支<ul><li>git branch -m |-M oldbranch newbranch   -M强制重命名(会删掉一开始存在的分支)</li></ul></li><li>删除分支<ul><li>git branch -d branch</li></ul></li></ul></li><li><p>查看本地分支加远程</p><ul><li>git branch -a</li></ul></li><li><p>推送本地分支至远程</p><ul><li>git push origin newbranch</li></ul></li><li><p>删除远程分支（保留本地分支）</p><ul><li>git push origin :remotebranch</li></ul></li><li><p>拉取远程分支，在本地创建分支</p><ul><li>git checkout -b local_branch origin/remote_branch</li></ul></li><li><p>获取远程分支最新转态</p><ul><li>git fetch</li></ul></li><li><p>–graph 以图标的形式显示</p></li><li><p>标签管理</p><ul><li>添加一个标签 git tag tag_name   不添加默认信息 为最后一次提交的描述信息</li><li>给指定版本添加标签 git tag tage_name ‘唯一标识’</li><li>git tag tag_name -m ‘信息’</li><li>git tag -d tage_name  删除一个标签</li><li>git push origin tage_name 推送标签至仓库</li><li>git push origin –tags  推送所有标签</li><li>git push origin :refs/tages/tag_name 删除远程仓库的一个标签</li></ul></li></ul>]]></content>
-      
-      
-      <categories>
-          
-          <category> git </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> git </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>git学习总结</title>
       <link href="/archives/8869ea7f.html"/>
       <url>/archives/8869ea7f.html</url>
@@ -335,6 +335,44 @@
     
     
     <entry>
+      <title>git操作</title>
+      <link href="/archives/46390b34.html"/>
+      <url>/archives/46390b34.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="git-命令"><a href="#git-命令" class="headerlink" title="git 命令"></a>git 命令</h1><mark class="hl-label green">若文章有误，欢迎读者指出</mark> <ul><li><p>1，初始化git ： git init</p></li><li><p>2，添加至缓存区 ：git add &lt;文件&gt; 如果添加当前文件夹所有 则 git add .</p><p>​      删除缓存区文件 ： git restore –staged &lt;文件&gt;</p><p>​                                       git reset HEAD &lt;文件&gt;</p></li><li><p>3，查看当前文件的状态 ：git status</p></li><li><p>4，提交文件 ： git commit [-m,-am] ‘描述’  -am 省略git add  步骤</p></li><li><p>5，查看提交记录  ： git log</p></li><li><p>6，使内容成一行显示 ：–pretty=oneline</p></li><li><p>7，查看文件与仓库的文件内容区别 ：git diff HEAD – &lt;文件&gt;</p></li><li><p>8，版本回退 ：git reset –hard HEAD^  回退一个版本  HEAD^^ 回退两个版本  HEAD~2 回退两个版本</p><p>​      git  reset –hard 唯一标识  跳转至唯一标识所在版本</p></li><li><p>9，查看所有的日志 ：git reflog</p></li><li><p>10 ，显示本地仓库文件目录 ： git ls-files</p></li><li><p>11，拉取文件 git pull</p></li><li><p>删除本地仓库文件的方式：</p><ul><li>在工作目录中删除文件</li><li>git add 添加删除的目录至缓存区</li><li>提交删除</li></ul></li><li><p>通过git rm 删除</p><ul><li>git rm &lt;文件&gt;</li></ul></li><li><p>添加远程仓库</p><ul><li>git remote add ‘名称’ 仓库地址</li></ul></li><li><p>第一次推送到远程仓库</p><ul><li>git push -u ‘名称’ master</li><li>其他推送 git push</li></ul></li><li><p>git 分支操作</p><ul><li>git checkout branch 切换到指定分支</li><li>git branch 查看所有分支，并标记当前所在分支</li><li>创建分支<ul><li>git checkout -b new_branch 新建分支并切换到新建分支</li></ul></li><li>合并分支<ul><li>git merge branch 合并分支  必须先切到主分支上</li></ul></li><li>重命名分支<ul><li>git branch -m |-M oldbranch newbranch   -M强制重命名(会删掉一开始存在的分支)</li></ul></li><li>删除分支<ul><li>git branch -d branch</li></ul></li></ul></li><li><p>查看本地分支加远程</p><ul><li>git branch -a</li></ul></li><li><p>推送本地分支至远程</p><ul><li>git push origin newbranch</li></ul></li><li><p>删除远程分支（保留本地分支）</p><ul><li>git push origin :remotebranch</li></ul></li><li><p>拉取远程分支，在本地创建分支</p><ul><li>git checkout -b local_branch origin/remote_branch</li></ul></li><li><p>获取远程分支最新转态</p><ul><li>git fetch</li></ul></li><li><p>–graph 以图标的形式显示</p></li><li><p>标签管理</p><ul><li>添加一个标签 git tag tag_name   不添加默认信息 为最后一次提交的描述信息</li><li>给指定版本添加标签 git tag tage_name ‘唯一标识’</li><li>git tag tag_name -m ‘信息’</li><li>git tag -d tage_name  删除一个标签</li><li>git push origin tage_name 推送标签至仓库</li><li>git push origin –tags  推送所有标签</li><li>git push origin :refs/tages/tag_name 删除远程仓库的一个标签</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/archives/4a17b156.html"/>
+      <url>/archives/4a17b156.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="博客终于搭建成功了！！！！"><a href="#博客终于搭建成功了！！！！" class="headerlink" title="博客终于搭建成功了！！！！"></a>博客终于搭建成功了！！！！</h1><p><img src="https://cdn.jsdelivr.net/gh/coding327/PicGoImg@main/blog/pictures10001.jpg" alt="10001"></p><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>hexo搭建博客</title>
       <link href="/archives/b37651.html"/>
       <url>/archives/b37651.html</url>
@@ -354,19 +392,6 @@
             <tag> hexo </tag>
             
         </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/archives/4a17b156.html"/>
-      <url>/archives/4a17b156.html</url>
-      
-        <content type="html"><![CDATA[<h1 id="博客终于搭建成功了！！！！"><a href="#博客终于搭建成功了！！！！" class="headerlink" title="博客终于搭建成功了！！！！"></a>博客终于搭建成功了！！！！</h1><p><img src="https://cdn.jsdelivr.net/gh/coding327/PicGoImg@main/blog/pictures10001.jpg" alt="10001"></p><p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-      
-      
       
     </entry>
     
