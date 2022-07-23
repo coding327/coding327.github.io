@@ -13,6 +13,15 @@ a {
     color: rgb(8, 152, 248)!important;
 }
 
+/* 顶部背景图调整[解决index_top_img_height: full screen不生效] */
+#body-wrap {
+    overflow: hidden;
+}
+#page-header {
+    height: 100vh;
+}
+
+
 /* 鼠标样式 */
 body {
     cursor: url(https://cdn.jsdelivr.net/gh/constown/HexoCustomFile/public/cursors/default.cur),
@@ -24,7 +33,7 @@ body {
       default;
   }
 
-  /* 滚动条样式 */
+/* 滚动条样式 */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
