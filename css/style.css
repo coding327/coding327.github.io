@@ -13,10 +13,14 @@ a {
     color: rgb(8, 152, 248)!important;
 }
 
-/* 顶部背景图调整[解决index_top_img_height: full screen不生效] */
+/* 背景动态渐变 */
 #body-wrap {
     overflow: hidden!important;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
 }
+/* 顶部背景图调整[解决index_top_img_height: full screen不生效] */
 header#page-header {
     height: 100vh;
 }
@@ -79,7 +83,8 @@ body {
     background: rgba(255,255,255,.3);
 }
 
-/* 动态渐变 */
+
+/* 背景动态渐变方法 */
 @keyframes gradientBG {
     0% {
         background-position: 0% 50%;
@@ -92,10 +97,4 @@ body {
     100% {
         background-position: 0% 50%;
     }
-}
-
-#web_bg {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
 }
