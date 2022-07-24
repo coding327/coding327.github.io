@@ -93,7 +93,10 @@ body {
     /* 以下代表白色透明度为0.3 */
     background: rgba(255,255,255,.5)!important;
 }
-
+/* aside-list-item去除下边框 */
+#aside-content .aside-list>.aside-list-item:not(:last-child) {
+    border-bottom: 0!important;
+}
 
 /* 背景动态渐变方法 */
 @keyframes gradientBG {
