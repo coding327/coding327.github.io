@@ -93,6 +93,10 @@ body {
     /* 以下代表白色透明度为0.3 */
     background: rgba(255,255,255,.5)!important;
 }
+/* 去除那年今日内部自带的背景色 */
+.history_slide {
+    background: transparent!important;
+}
 /* aside-list-item去除下边框 */
 #aside-content .aside-list>.aside-list-item:not(:last-child) {
     border-bottom: 0!important;
