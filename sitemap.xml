@@ -2,6 +2,33 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://coding327.github.io/archives/cbf8a007.html</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/archives/b9f399df.html</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/archives/c45aeeab.html</loc>
+    
+    <lastmod>2022-07-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/archives/1d15faa4.html</loc>
     
     <lastmod>2022-07-24</lastmod>
@@ -12,15 +39,6 @@
   
   <url>
     <loc>https://coding327.github.io/archives/46390b34.html</loc>
-    
-    <lastmod>2022-07-24</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://coding327.github.io/archives/c45aeeab.html</loc>
     
     <lastmod>2022-07-24</lastmod>
     
@@ -270,14 +288,14 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/git/</loc>
+    <loc>https://coding327.github.io/tags/React/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/React/</loc>
+    <loc>https://coding327.github.io/tags/git/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -298,13 +316,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/Vue3/</loc>
-    <lastmod>2022-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/tags/express/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -312,7 +323,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/tags/npm/</loc>
+    <loc>https://coding327.github.io/tags/Vue3/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -340,6 +351,13 @@
   </url>
   
   <url>
+    <loc>https://coding327.github.io/tags/npm/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://coding327.github.io/tags/Vue/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -356,7 +374,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/git/</loc>
+    <loc>https://coding327.github.io/categories/React/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -370,7 +388,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/React/</loc>
+    <loc>https://coding327.github.io/categories/git/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -384,13 +402,6 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/Vue3/</loc>
-    <lastmod>2022-07-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://coding327.github.io/categories/express/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
@@ -398,7 +409,7 @@
   </url>
   
   <url>
-    <loc>https://coding327.github.io/categories/npm/</loc>
+    <loc>https://coding327.github.io/categories/Vue3/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -413,6 +424,13 @@
   
   <url>
     <loc>https://coding327.github.io/categories/vscode/</loc>
+    <lastmod>2022-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://coding327.github.io/categories/npm/</loc>
     <lastmod>2022-07-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
