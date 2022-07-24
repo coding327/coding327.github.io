@@ -16,7 +16,18 @@ a {
 /* 背景动态渐变 */
 #body-wrap {
     overflow: hidden!important;
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* 颜色搭配1 */
+    /* background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* background: -moz-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* background: -o-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* background: -ms-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    /* 颜色搭配2 */
+    background: -webkit-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -moz-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -o-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -ms-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
     background-size: 400% 400%;
     animation: gradientBG 15s ease infinite;
 }
