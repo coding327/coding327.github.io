@@ -1,0 +1,95 @@
+/*电子钟字体*/
+@font-face {
+  font-family: 'UnidreamLED';
+  src: url("https://cdn.jsdelivr.net/npm/akilar-candyassets/fonts/UnidreamLED.ttf");
+  font-display: swap;
+}
+#footer #workboard {
+    margin-bottom: 6px;
+}
+div#runtime {
+  width: 180px;
+  margin: auto;
+  color: #18cfeb;
+  padding-inline: 5px;
+  border-radius: 18px;
+  background-color: rgba(0,0,0,0.7);
+  font-family: 'UnidreamLED';
+  box-shadow: 0 0 1px 2px rgba(0, 255, 255);
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  -ms-border-radius: 18px;
+  -o-border-radius: 18px;
+  animation: lightHandle 1s linear infinite alternate;
+  -webkit-animation: lightHandle 1s linear infinite alternate;
+}
+/* 自制light呼吸灯 */
+@keyframes lightHandle {
+    from {
+        box-shadow: 0 0 1px 2px rgba(0, 255, 255);
+    }
+    to {
+        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.7);
+    }
+}
+
+
+/* 黑暗模式开启呼吸灯效果 */
+/* [data-theme="dark"] div#runtime {
+  color: #28b4c8;
+  box-shadow: 0 0 5px rgba(28,69,218,0.71);
+  animation: flashlight 1s linear infinite alternate;
+  -webkit-animation: flashlight 1s linear infinite alternate;
+} */
+/*悬停显示徽标提示语*/
+/* a.github-badge:hover:before {
+  position: fixed;
+  width: fit-content;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 10%;
+  border-radius: 10px;
+  text-align: center;
+  z-index: 100;
+  content: attr(data-title);
+  font-size: 20px;
+  color: #fff;
+  padding: 10px;
+  background-color: var(--text-bg-hover);
+}
+[data-theme=dark] a.github-badge:hover:before {
+  background-color: rgba(18,18,18,0.8);
+}
+@-moz-keyframes flashlight {
+  from {
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-webkit-keyframes flashlight {
+  from {
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@-o-keyframes flashlight {
+  from {
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    box-shadow: 0 0 2px #1478d2;
+  }
+}
+@keyframes flashlight {
+  from {
+    box-shadow: 0 0 5px #1478d2;
+  }
+  to {
+    box-shadow: 0 0 2px #1478d2;
+  }
+} */

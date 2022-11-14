@@ -1,0 +1,439 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>webpack5-babel篇(五) | 穿书自救指南</title><meta name="keywords" content="webpack5"><meta name="author" content="向天卷飞机"><meta name="copyright" content="向天卷飞机"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="webpack5-babel篇">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack5-babel篇(五)">
+<meta property="og:url" content="https://www.coding327.top/archives/cfda1718.html">
+<meta property="og:site_name" content="穿书自救指南">
+<meta property="og:description" content="webpack5-babel篇">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://img.coding327.top/blogImg/10033.gif">
+<meta property="article:published_time" content="2022-10-22T16:32:39.000Z">
+<meta property="article:modified_time" content="2022-10-22T17:18:39.000Z">
+<meta property="article:author" content="向天卷飞机">
+<meta property="article:tag" content="webpack">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://img.coding327.top/blogImg/10033.gif"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://www.coding327.top/archives/cfda1718"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="aV0AumX2igyQ-W00CfnSMLTj39IRyuML7dCl5-J_FVE"/><meta name="baidu-site-verification" content="code-dpqjDebRv8"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c850da1102b7d7a3d25c81940224a031";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-62EFV6W1LM"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-62EFV6W1LM');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":180,"position":"top","messagePrev":"该文章创建于","messageNext":"天前，请以最新文章为准！"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 向天卷飞机","link":"链接: ","source":"来源: 穿书自救指南","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-right"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'webpack5-babel篇(五)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-22 17:18:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/iconfont.css"><link rel="stylesheet" href="/css/style.css"><style type="text/css">#toggle-sidebar {left:100px}</style><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiperstyle.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/css/main.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="/css/runtime.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"><link rel="alternate" href="/atom.xml" title="穿书自救指南" type="application/atom+xml">
+</head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-shouye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-xianxingshuxie"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-gongchengyuguidang"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-youxi"></i><span> 娱乐</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw iconfont icon-xiangce"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-icon_erji"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/index.html"><i class="fa-fw iconfont icon-bilibili"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-shejiaotubiao-02"></i><span> 社交</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw iconfont icon-liuyan"></i><span> 留言</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-liebiao"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://coding327.top"><i class="fa-fw iconfont icon-icon_app_map_"></i><span> 换线</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-shenfenzheng"></i><span> 关于</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://img.coding327.top/blogImg/10178.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">穿书自救指南</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw iconfont icon-shouye"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-xianxingshuxie"></i><span> 文章</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw iconfont icon-gongchengyuguidang"></i><span> 归档</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw iconfont icon-biaoqian"></i><span> 标签</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw iconfont icon-fenlei"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-youxi"></i><span> 娱乐</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/Gallery/"><i class="fa-fw iconfont icon-xiangce"></i><span> 图库</span></a></li><li><a class="site-page child" href="/music/"><i class="fa-fw iconfont icon-icon_erji"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/bangumis/index.html"><i class="fa-fw iconfont icon-bilibili"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-shejiaotubiao-02"></i><span> 社交</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/comments/"><i class="fa-fw iconfont icon-liuyan"></i><span> 留言</span></a></li><li><a class="site-page child" href="/link/"><i class="fa-fw iconfont icon-lianjie"></i><span> 友链</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw iconfont icon-liebiao"></i><span> 链接</span><i class="fas fa-chevron-down expand hide"></i></a><ul class="menus_item_child"><li><a class="site-page child" target="_blank" rel="noopener external nofollow noreferrer" href="https://coding327.top"><i class="fa-fw iconfont icon-icon_app_map_"></i><span> 换线</span></a></li><li><a class="site-page child" href="/about/"><i class="fa-fw iconfont icon-shenfenzheng"></i><span> 关于</span></a></li></ul></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">webpack5-babel篇(五)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-22T16:32:39.000Z" title="发表于 2022-10-22 16:32:39">2022-10-22</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-22T17:18:39.000Z" title="更新于 2022-10-22 17:18:39">2022-10-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/webpack/">webpack</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.9k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="webpack5-babel篇(五)"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><mark class="hl-label green">若文章有误，欢迎读者留言反馈</mark> 
+<p>💻Installation<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/coding327/learn_webpack5.git</span><br></pre></td></tr></table></figure></p>
+<h2 id="webpack-babel工具"><a href="#webpack-babel工具" class="headerlink" title="webpack-babel工具"></a>webpack-babel工具</h2><blockquote>
+<p>这里我们先引入一个工具<code>babel</code></p>
+</blockquote>
+<p><a target="_blank" rel="noopener external nofollow noreferrer" href="https://babeljs.io">babel官网</a></p>
+<ul>
+<li>事实上，在开发中我们很少直接去接触<code>babel</code>，但是<strong><code>babel</code>对于前端开发</strong>来说，目前是<strong>不可缺少的一部分</strong>:<ul>
+<li>开发中，我们想要使用<strong><code>ES6+</code></strong>的语法，想要使用<strong><code>TypeScript</code></strong>，开发<strong><code>React</code>项目</strong>，它们<strong>都是离不开<code>Babel</code></strong>的;</li>
+<li>所以，<strong>学习<code>Babel</code></strong>对于我们理解代码从编写到线上的转变过程至关重要;</li>
+</ul>
+</li>
+<li>那么，<code>Babel</code>到底是什么呢?<ul>
+<li><code>Babel</code>是一个<strong>工具链</strong>，主要用于旧浏览器或者环境中将<strong>ECMAScript 2015+</strong>代码转换为向后兼容版本的<strong>JavaScript</strong>;</li>
+<li>包括:语法转换、源代码转换等;<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>].map(<span class="function">(<span class="params">n</span>) =&gt;</span>n+ <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">[<span class="number">1</span>，<span class="number">2</span>，<span class="number">3</span>].map(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> n + <span class="number">1</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Babel命令行使用-不推荐"><a href="#Babel命令行使用-不推荐" class="headerlink" title="Babel命令行使用[不推荐]"></a>Babel命令行使用[不推荐]</h2><ul>
+<li><code>babel</code>本身可以作为一个独立的工具（和<code>postcss</code>一样)，不和<code>webpack</code>等构建工具配置来单独使用。</li>
+<li>如果我们希望在命令行尝试使用<code>babel</code>，需要安装如下库:<ul>
+<li><code>@babel/core</code>: <code>babel</code>的核心代码，必须安装;</li>
+<li><code>@babel/cli</code>: 可以让我们在<strong>命令行【如果是在webpack中配置使用是不需要安装的】</strong>使用<code>babel</code>;</li>
+</ul>
+</li>
+<li>使用<code>babel</code>来处理我们的源代码:<ul>
+<li><code>src</code>∶ 是源文件的目录;</li>
+<li><code>--out-dir</code>: 指定要输出的文件夹<code>dist</code>;</li>
+<li><code>--out-file</code>: 指定要输出的文件如<code>demo.js</code></li>
+</ul>
+</li>
+</ul>
+<p>安装以上两个库<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/core @babel/cli -D</span><br></pre></td></tr></table></figure></p>
+<p>我们在项目根目录下创建一个<code>demo.js</code>文件，在里面写点<code>ES6</code>代码<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 书写ES6代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="string">&quot;Hello World&quot;</span></span><br><span class="line"><span class="keyword">const</span> names = [<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;cba&quot;</span>, <span class="string">&quot;nba&quot;</span>]</span><br><span class="line"></span><br><span class="line">names.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item))</span><br></pre></td></tr></table></figure></p>
+<p>这里我们想用<code>babel</code>把以上<code>ES6</code>代码转换为<code>ES5</code>代码，局部安装<code>babel</code>，它是在咱们的<code>node_modules/.bin</code>下的<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel demo.js --out-dir dist</span><br></pre></td></tr></table></figure></p>
+<p>但是会发现<code>dist</code>下的<code>demo.js</code>依旧还是之前<code>ES6</code>代码<br>主要是因为在我们使用<code>babel</code>的时候，如果你想要把我们的某些语法做一个转化，这个时候的话你必须对应的使用一个插件</p>
+<h2 id="babel工具插件的使用"><a href="#babel工具插件的使用" class="headerlink" title="babel工具插件的使用"></a>babel工具插件的使用</h2><p>比如我们需要转换箭头函数，那么我们就可以使用箭头函数转换相关的插件:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/plugin-transform-arrow-functions -D</span><br></pre></td></tr></table></figure></p>
+<p>使用该插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npx babel demo.js --out-dir dist --plugins=@babel/plugin-transform-arrow-functions</span><br></pre></td></tr></table></figure></p>
+<p>这时候我们再去看<code>dist</code>下的<code>demo.js</code>，发现箭头函数就被转换为<code>ES5</code>代码了<br>但是<code>const</code>没有做转换，这时候我们也可以使用以下这个插件【转换let、const这种块级作用域的定义的关键字】来做转换<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/plugin-transform-block-scoping -D</span><br></pre></td></tr></table></figure></p>
+<p>使用该插件：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 多个插件用,隔开</span></span><br><span class="line">npx babel demo.js --out-dir dist --plugins=@babel/plugin-transform-arrow-functions,@babel/plugin-transform-block-scoping</span><br></pre></td></tr></table></figure></p>
+<p>这时我们就发现转换成功了</p>
+<blockquote>
+<p>但是<code>ES6</code>语法这么多还有<code>ES7</code>、<code>ES8</code>、<code>ES9</code>、<code>ES10</code>等等，一个一个插件安装太费劲了<br>正是因为麻烦，所以<code>babel</code>它给我们提供了另外一个东西<strong><code>preset</code></strong></p>
+</blockquote>
+<h2 id="babel的预设preset"><a href="#babel的预设preset" class="headerlink" title="babel的预设preset"></a>babel的预设preset</h2><p>把我们常用的那些插件相当于集合到了一起<br>安装<code>@babel/preset-env</code>预设:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install @babel/preset-env -D</span><br></pre></td></tr></table></figure></p>
+<p>使用预设：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 预设可能是有多个的，所以后面会有个s，像react的预设或者ts的预设，它们都有对应的预设的</span></span><br><span class="line">npx babel demo.js --out-dir dist --presets=@babel/preset-env</span><br></pre></td></tr></table></figure><br>为了方便观察，可以把<code>dist</code>删掉，再执行，发现转换成功</p>
+<h2 id="Babel的底层原理"><a href="#Babel的底层原理" class="headerlink" title="Babel的底层原理"></a>Babel的底层原理</h2><p><code>babel</code>是如何做到将我们的<strong>一段代码(<code>ES6</code>、<code>TypeScript</code>、<code>React</code>)</strong>转成<strong>另外一段代码(<code>ES5</code>)</strong>的呢?</p>
+<ul>
+<li>从一种<strong>源代码（原生语言）</strong>转换成<strong>另一种源代码（目标语言）</strong>，这是什么的工作呢?</li>
+<li>就是<strong>编译器</strong>，事实上我们可以将<code>babel</code>看成就是一个编译器。</li>
+<li><code>Babel</code>编译器的作用就是<strong>将我们的源代码</strong>，转换成浏览器可以直接识别的<strong>另外一段源代码</strong>;<br><strong><code>Babel</code>也拥有编译器的工作流程:</strong></li>
+<li>解析阶段(<code>Parsing</code>)</li>
+<li>转换阶段(<code>Transformation</code>)</li>
+<li>生成阶段(<code>Code Generation</code>)</li>
+</ul>
+<h2 id="Babel编译器执行原理"><a href="#Babel编译器执行原理" class="headerlink" title="Babel编译器执行原理"></a>Babel编译器执行原理</h2><blockquote>
+<p><code>Babel</code>的执行阶段</p>
+</blockquote>
+<p><img src= "https://img.coding327.top/blogImg/10049.gif" data-lazy-src="https://img.coding327.top/blogImg/10176.png" alt="10176"></p>
+<blockquote>
+<p>当然，这只是一个简化版的编译器工具流程，在每个阶段又会有自己具体的工作:</p>
+</blockquote>
+<p><img src= "https://img.coding327.top/blogImg/10049.gif" data-lazy-src="https://img.coding327.top/blogImg/10177.png" alt="10177"></p>
+<h2 id="webpack中如何配置babel"><a href="#webpack中如何配置babel" class="headerlink" title="webpack中如何配置babel"></a>webpack中如何配置babel</h2><h2 id="认识babel-loader"><a href="#认识babel-loader" class="headerlink" title="认识babel-loader"></a>认识babel-loader</h2><blockquote>
+<p>webpack并没有将我们的ES6代码转为ES5代码</p>
+</blockquote>
+<p>这里我们可以验证一下：<br>把之前<code>demo.js</code>文件里的代码添加到<code>main.js</code>文件中<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 书写ES6代码</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> message = <span class="string">&quot;Hello World&quot;</span></span><br><span class="line"><span class="keyword">const</span> names = [<span class="string">&quot;abc&quot;</span>, <span class="string">&quot;cba&quot;</span>, <span class="string">&quot;nba&quot;</span>]</span><br><span class="line"></span><br><span class="line">names.forEach(<span class="function"><span class="params">item</span> =&gt;</span> <span class="built_in">console</span>.log(item))</span><br><span class="line"><span class="built_in">console</span>.log(message)</span><br></pre></td></tr></table></figure></p>
+<p>然后我们打包试一下，在打包文件夹下找到<code>main.js</code>文件，直接搜索<code>message</code>就能找到，发现仍然是ES6代码，<code>webpack</code>并没有帮我们做转换<br>因为这不属于<code>webpack</code>的工作，<code>webpack</code>是一个<strong>模块化</strong>的打包工具，它是不负责语法转换这个工作的，但是它负责每个文件当成一个模块，支持<code>esmodule</code>、<code>commonjs</code>、<code>amd</code><br>这个时候我们就需要使用<code>babel</code>，将<code>ES6</code>及以上的语法转换为<code>ES5</code>代码<br>那么什么时候使用<code>babel</code>呢？<br>很显然就是在<code>webpack</code>解析【加载】我们的<code>js</code>代码时，使用这个<code>babel-loader</code></p>
+<p>安装<code>babel-loader</code><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install babel-loader -D</span><br></pre></td></tr></table></figure></p>
+<p>回到<code>webpack.config.js</code>配置文件中，配置<code>rules</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  use: &#123;</span><br><span class="line">    <span class="attr">loader</span>: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">    <span class="attr">options</span>: &#123;</span><br><span class="line">      <span class="attr">plugins</span>: [</span><br><span class="line">        <span class="string">&quot;@babel/plugin-transform-arrow-functions&quot;</span>,</span><br><span class="line">        <span class="string">&quot;@babel/plugin-transform-block-scoping&quot;</span>,</span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="comment">// 加载js所需要规则【配置项未抽离版】</span></span><br></pre></td></tr></table></figure></p>
+<p>然后再打包，就发现语法转换成功<br>但是有个弊端，每次写插件过于麻烦，我们可以使用预设<code>preset</code><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  use: &#123;</span><br><span class="line">    <span class="attr">loader</span>: <span class="string">&quot;babel-loader&quot;</span>,</span><br><span class="line">    <span class="attr">options</span>: &#123;</span><br><span class="line">      <span class="comment">// plugins: [</span></span><br><span class="line">      <span class="comment">//   &quot;@babel/plugin-transform-arrow-functions&quot;,</span></span><br><span class="line">      <span class="comment">//   &quot;@babel/plugin-transform-block-scoping&quot;,</span></span><br><span class="line">      <span class="comment">// ]</span></span><br><span class="line">      <span class="attr">presets</span>: [</span><br><span class="line">        <span class="string">&quot;@babel/preset-env&quot;</span></span><br><span class="line">        <span class="comment">// [&quot;@babel/preset-env&quot;, &#123;</span></span><br><span class="line">        <span class="comment">//   // 配置项</span></span><br><span class="line">        <span class="comment">// &#125;] // 这个写法是补充的，因为有可能在其它地方需要传入配置项</span></span><br><span class="line">      ]</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;, <span class="comment">// 加载js所需要规则【配置项未抽离版】</span></span><br></pre></td></tr></table></figure></p>
+<p>重新打包发现也是转换成功了</p>
+<p>之前<code>postcss</code>我们把配置可以<strong>抽离</strong>到独立的文件里，<code>babel</code>也是可以的</p>
+<h2 id="Babel的配置文件"><a href="#Babel的配置文件" class="headerlink" title="Babel的配置文件"></a>Babel的配置文件</h2><p>像之前一样，我们可以将<code>babel</code>的配置信息放到一个独立的文件中，<code>babel</code>给我们提供了两种配置文件的编写︰</p>
+<ul>
+<li><code>babel.config.json</code>（或者<code>js</code> ，<code>.cjs</code> , <code>.mjs</code> )文件;</li>
+<li><code>.babelrc.json</code>(或者<code>.babelrc</code> , <code>.js</code> , <code>.cjs</code> , <code>.mjs</code> )文件;<br>以上第二个多个<code>rc</code>，这个<code>rc</code>可以理解为<code>runtime compiler</code>，运行时编译</li>
+</ul>
+<p>它们两个有什么区别呢﹖目前很多的项目都采用了多包管理的方式( <code>babel</code>本身、<code>element-plus</code>、<code>umi</code>等);</p>
+<ul>
+<li><code>.babelrc.json</code> ( 早期 ): 早期使用较多的配置方式，但是对于配置<code>Monorepos</code>项目是比较麻烦的;</li>
+<li><code>babel.config.json</code> ( <code>babel7</code>开始 ): 可以直接作用于<code>Monorepos</code>项目的子包，更加推荐;</li>
+</ul>
+<h2 id="编写babel的配置文件"><a href="#编写babel的配置文件" class="headerlink" title="编写babel的配置文件"></a>编写babel的配置文件</h2><p>在项目根目录下新建<code>babel.config.js</code>文件，当然也可以是<code>json</code>后缀名，个人比较喜欢<code>js</code>写<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attr">presets</span>: [</span><br><span class="line">    <span class="string">&quot;@babel/preset-env&quot;</span></span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>回到<code>webpack.config.js</code>文件中重新进行配置，由于配置被抽离出去了，只需要使用<code>loader</code>即可<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">test</span>: <span class="regexp">/\.js$/</span>,</span><br><span class="line">  loader: <span class="string">&quot;babel-loader&quot;</span> <span class="comment">// 这里没写use用loader让阅读性更强</span></span><br><span class="line">&#125;, <span class="comment">// 加载js所需要规则【配置项抽离版】</span></span><br></pre></td></tr></table></figure><br>再次打包，发现转换成功</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">向天卷飞机</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.coding327.top/archives/cfda1718.html">https://www.coding327.top/archives/cfda1718.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.coding327.top" target="_blank">穿书自救指南</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/webpack/">webpack</a></div><div class="post_share"><div class="social-share" data-image="https://img.coding327.top/blogImg/10033.gif" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button button--animated"><i class="fas fa-qrcode"></i> 打赏</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat.png" target="_blank"><img class="post-qr-code-img" src="/img/wechat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/alipay.jpg" target="_blank"><img class="post-qr-code-img" src="/img/alipay.jpg" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/ec0cf016.html"><img class="prev-cover" src="https://img.coding327.top/blogImg/10033.gif" onerror="onerror=null;src='/img/404.gif'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">webpack5-vue篇(六)</div></div></a></div><div class="next-post pull-right"><a href="/archives/3bc3a4c6.html"><img class="next-cover" src="https://img.coding327.top/blogImg/10033.gif" onerror="onerror=null;src='/img/404.gif'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">webpack5-插件篇(四)</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/archives/93e9d0fa.html" title="webpack5-初识篇(一)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-17</div><div class="title">webpack5-初识篇(一)</div></div></a></div><div><a href="/archives/681e1b85.html" title="webpack5-资源篇(三)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-21</div><div class="title">webpack5-资源篇(三)</div></div></a></div><div><a href="/archives/f06c04f5.html" title="webpack5-样式篇(二)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-17</div><div class="title">webpack5-样式篇(二)</div></div></a></div><div><a href="/archives/ec0cf016.html" title="webpack5-vue篇(六)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-24</div><div class="title">webpack5-vue篇(六)</div></div></a></div><div><a href="/archives/3bc3a4c6.html" title="webpack5-插件篇(四)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-22</div><div class="title">webpack5-插件篇(四)</div></div></a></div><div><a href="/archives/73e47a95.html" title="webpack5-server篇(七)"><img class="cover" src="https://img.coding327.top/blogImg/10033.gif" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-24</div><div class="title">webpack5-server篇(七)</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/404.gif'" alt="avatar"/></div><div class="author-info__name">向天卷飞机</div><div class="author-info__description"><strong>万花丛中过 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-Butterfly"></use></svg> 片叶不沾身</strong></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">54</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">20</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">23</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/coding327"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/coding327" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="iconfont icon-github fas"></i></a><a class="social-icon" href="mailto:1545721718@qq.com" rel="external nofollow noreferrer" target="_blank" title="Email"><i class="iconfont icon-youxiang fas"></i></a><a class="social-icon" href="/atom.xml" target="_blank" title="RSS"><i class="iconfont icon-Rss fas"></i></a><a class="social-icon" href="https://wpa.qq.com/msgrd?v=3&amp;uin=1545721718&amp;site=qq&amp;menu=yes" rel="external nofollow noreferrer" target="_blank" title="QQ"><i class="iconfont icon-QQ fas"></i></a><a class="social-icon" href="weixin://profile/coding327" rel="external nofollow noreferrer" target="_blank" title="微信"><i class="iconfont icon-weixin fas"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content"><span style="display:inline-block;text-indent:2em;">🚦本站最近会有更新，请尝试使用<b> Shift + F5 </b>刷新缓存，如果遇见🐞，欢迎留言反馈🌈</span><div style="background:#fff;opacity:0.8;overflow:hidden;border-radius:0.5rem;"><img style="float:left;" src="https://img.coding327.top/blogImg/10145.gif" alt="图片走丢了qwq" /></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack-babel%E5%B7%A5%E5%85%B7"><span class="toc-number">2.</span> <span class="toc-text">webpack-babel工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%BD%BF%E7%94%A8-%E4%B8%8D%E6%8E%A8%E8%8D%90"><span class="toc-number">3.</span> <span class="toc-text">Babel命令行使用[不推荐]</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babel%E5%B7%A5%E5%85%B7%E6%8F%92%E4%BB%B6%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="toc-number">4.</span> <span class="toc-text">babel工具插件的使用</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#babel%E7%9A%84%E9%A2%84%E8%AE%BEpreset"><span class="toc-number">5.</span> <span class="toc-text">babel的预设preset</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86"><span class="toc-number">6.</span> <span class="toc-text">Babel的底层原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel%E7%BC%96%E8%AF%91%E5%99%A8%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-number">7.</span> <span class="toc-text">Babel编译器执行原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#webpack%E4%B8%AD%E5%A6%82%E4%BD%95%E9%85%8D%E7%BD%AEbabel"><span class="toc-number">8.</span> <span class="toc-text">webpack中如何配置babel</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A4%E8%AF%86babel-loader"><span class="toc-number">9.</span> <span class="toc-text">认识babel-loader</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Babel%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">10.</span> <span class="toc-text">Babel的配置文件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E5%86%99babel%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-number">11.</span> <span class="toc-text">编写babel的配置文件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/archives/615393e4.html" title="前端构建工具Vite"><img src="https://img.coding327.top/blogImg/10033.gif" onerror="this.onerror=null;this.src='/img/404.gif'" alt="前端构建工具Vite"/></a><div class="content"><a class="title" href="/archives/615393e4.html" title="前端构建工具Vite">前端构建工具Vite</a><time datetime="2022-10-31T14:30:09.000Z" title="发表于 2022-10-31 14:30:09">2022-10-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/3b9361d9.html" title="Vue CLI脚手架"><img src="https://img.coding327.top/blogImg/10033.gif" onerror="this.onerror=null;this.src='/img/404.gif'" alt="Vue CLI脚手架"/></a><div class="content"><a class="title" href="/archives/3b9361d9.html" title="Vue CLI脚手架">Vue CLI脚手架</a><time datetime="2022-10-26T17:17:09.000Z" title="发表于 2022-10-26 17:17:09">2022-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/842b6f72.html" title="webpack5-完结篇(八)"><img src="https://img.coding327.top/blogImg/10033.gif" onerror="this.onerror=null;this.src='/img/404.gif'" alt="webpack5-完结篇(八)"/></a><div class="content"><a class="title" href="/archives/842b6f72.html" title="webpack5-完结篇(八)">webpack5-完结篇(八)</a><time datetime="2022-10-26T01:56:09.000Z" title="发表于 2022-10-26 01:56:09">2022-10-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/73e47a95.html" title="webpack5-server篇(七)"><img src="https://img.coding327.top/blogImg/10033.gif" onerror="this.onerror=null;this.src='/img/404.gif'" alt="webpack5-server篇(七)"/></a><div class="content"><a class="title" href="/archives/73e47a95.html" title="webpack5-server篇(七)">webpack5-server篇(七)</a><time datetime="2022-10-24T19:27:23.000Z" title="发表于 2022-10-24 19:27:23">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/archives/ec0cf016.html" title="webpack5-vue篇(六)"><img src="https://img.coding327.top/blogImg/10033.gif" onerror="this.onerror=null;this.src='/img/404.gif'" alt="webpack5-vue篇(六)"/></a><div class="content"><a class="title" href="/archives/ec0cf016.html" title="webpack5-vue篇(六)">webpack5-vue篇(六)</a><time datetime="2022-10-24T03:27:09.000Z" title="发表于 2022-10-24 03:27:09">2022-10-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2021 - 2022 By 向天卷飞机</div><div class="footer_custom_text"><div><a onclick="window.open('https://beian.miit.gov.cn')">鄂 ICP 备 2022013473 号 <span style="position:relative;top:3.5px;"><svg class="china" t="1631772151823" viewBox="0 0 1546 1024" version="1.1" xmlns="https://www.w3.org/2000/svg" p-id="2637" width="36" height="18"> <path d="M11.322 1017.71h1520.904V6.29H11.322v1011.42zM1536 1021.484v-3.774 3.774zM5.032 1024V0h1533.484v1024H5.032z" fill="#353636" p-id="2638"></path> <path d="M8.806 2.516H1536v1017.71H8.806z" fill="#D64B24" p-id="2639"></path> <path d="M264.177 118.25l32.708 99.381h104.412l-84.285 60.384 31.45 99.38-84.285-61.64-84.285 61.64 32.708-99.38-84.286-60.384h104.413z m271.725-52.835l-1.258 35.224 31.45 12.58-33.966 8.806-1.258 33.965L512 127.057l-32.708 7.547 21.386-26.417-17.612-28.934 31.45 13.838z m116.992 111.96L637.8 207.569l23.901 23.901-33.965-5.032-15.096 30.192-5.032-33.966-33.966-5.032 30.192-15.095-5.032-33.966 23.902 23.902z m-35.223 138.38l11.322 32.707h33.965l-27.675 20.128 10.063 32.707-27.675-20.127-27.676 20.127 11.322-32.707-27.676-20.128h33.966z m-81.77 105.67l-2.515 33.966 32.707 12.58-33.965 8.805-2.516 33.966L512 481.808l-33.966 8.806 22.644-26.417-18.87-28.934 32.708 12.58z" fill="#FBDC00" p-id="2640"></path> </svg></span></a></div><div><a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=42900602000305" rel="external nofollow noreferrer"><img style="position:relative;top:3.5px;" src="/img/beian.png" /> 鄂公网安备 42900602000305 号</a></div><div><a href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" target="_blank" rel="noopener nofollow">本网站由&nbsp;<img style="position:relative;top:-2.5px;" src="https://img.coding327.top/blogImg/又拍云_logo.png" alt="又拍云" align="absmiddle" width="60px" height="30px">&nbsp;提供 CDN 加速服务</a></div></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="rightside.chat_btn"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div></div><hr/><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>(()=>{
+  const $countDom = document.getElementById('twikoo-count')
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://twikoo.coding327.top',
+      region: ''
+    }, null))
+  }
+
+  const getCount = () => {
+    twikoo.getCommentsCount({
+      envId: 'https://twikoo.coding327.top',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(function (res) {
+      $countDom.innerText = res[0].count
+    }).catch(function (err) {
+      console.error(err);
+    });
+  }
+
+  const loadTwikoo = (bool = false) => {
+    if (typeof twikoo === 'object') {
+      init()
+      bool && $countDom && setTimeout(getCount,0)
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo/dist/twikoo.all.min.js').then(()=> {
+        init()
+        bool && $countDom && setTimeout(getCount,0)
+      })
+    }
+  }
+
+  if ('Twikoo' === 'Twikoo' || !false) {
+    if (false) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo(true)
+  } else {
+    window.loadOtherComment = () => {
+      loadTwikoo()
+    }
+  }
+})()</script></div><script async src="//at.alicdn.com/t/c/font_3746055_3s362iowntr.js"></script><script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script><script src="https://myhkw.cn/api/player/163541912734" id="myhk" key="163541912734" m="1"></script><script src="/js/myjs.js"></script><script async src="/js/diytitle.js"></script><canvas class="fireworks" mobile="true"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script src="//code.tidio.co/1dvtmq0kajtdskrufxxlkvd07x7klwrf.js" async="async"></script><script>function onTidioChatApiReady() {
+  window.tidioChatApi.hide();
+  window.tidioChatApi.on("close", function() {
+    window.tidioChatApi.hide();
+  });
+}
+if (window.tidioChatApi) {
+  window.tidioChatApi.on("ready", onTidioChatApiReady);
+} else {
+  document.addEventListener("tidioChat-ready", onTidioChatApiReady);
+}
+
+var chatBtnFn = () => {
+  document.getElementById("chat_btn").addEventListener("click", function(){
+    window.tidioChatApi.show();
+    window.tidioChatApi.open();
+  });
+}
+chatBtnFn()
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && location.pathname =='/'){
+    
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://img.coding327.top/blogImg/10032.jpg" alt="https://img.coding327.top/blogImg/10032.jpg"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-10-18</span><a class="blog-slider__title" href="archives/b37651.html">hexo搭建博客</a><div class="blog-slider__text">hexo+butterfly搭建个人博客，并用git管理博客源码！</div><a class="blog-slider__button" href="archives/b37651.html">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://img.coding327.top/blogImg/10036.jpeg" alt="https://img.coding327.top/blogImg/10036.jpeg"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-11-16</span><a class="blog-slider__title" href="archives/46390b34.html">git命令备忘录</a><div class="blog-slider__text">收集个人遇到的有趣的git命令！</div><a class="blog-slider__button" href="archives/46390b34.html">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://img.coding327.top/blogImg/10021.jpg" alt="https://img.coding327.top/blogImg/10021.jpg"/></div><div class="blog-slider__content"><span class="blog-slider__code">2022-07-05</span><a class="blog-slider__title" href="archives/1d15faa4.html">ES6模块化理解</a><div class="blog-slider__text">ES6模块化理解！</div><a class="blog-slider__button" href="archives/1d15faa4.html">详情</a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms"><div class="blog-slider__img"><img src="https://img.coding327.top/blogImg/10038.jpg" alt="https://img.coding327.top/blogImg/10038.jpg"/></div><div class="blog-slider__content"><span class="blog-slider__code">2021-11-16</span><a class="blog-slider__title" href="archives/8869ea7f.html">git学习总结</a><div class="blog-slider__text">git笔记！</div><a class="blog-slider__button" href="archives/8869ea7f.html">详情</a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载swiper')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper/swiper/swiper.min.js"></script>
+<script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-swiper@0.18/swiper/swiperindex.js"></script>
+<style></style><script data-pjax>function history_calendar_injector_config(){
+                var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+                var item_html = '<div class="card-widget card-history"><div class="card-content"><div class="item-headline"><i class="fas fa-clock fa-spin"></i><span>那年今日</span></div><div id="history-baidu" style="height: 100px;overflow: hidden"><div class="history_swiper-container" id="history-container" style="width: 100%;height: 100%"><div class="swiper-wrapper" id="history_container_wrapper" style="height:20px"></div></div></div></div>';
+                console.log('已挂载history_calendar')
+                // parent_div_git.innerHTML=item_html+parent_div_git.innerHTML // 无报错，但不影响使用(支持pjax跳转)
+                parent_div_git.insertAdjacentHTML("afterbegin",item_html) // 有报错，但不影响使用(支持pjax跳转)
+            }if( document.getElementsByClassName('sticky_layout')[0] && (location.pathname ==='all'|| 'all' ==='all')){
+
+            history_calendar_injector_config()
+        } </script><script data-pjax src="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-card-history/baiduhistory/js/main.js"></script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = '09ad5128a60d4d289a100f5af9b0d158';
+  var gaud_map_key = 'effb9618727624ce8c10ccb22f226779';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.982279,28.19409';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="/js/runtime.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --></body></html>

@@ -1,0 +1,631 @@
+@charset "utf-8";
+
+/* ---------------------------------------------------------- */
+/* 头像 */
+/* 取消鼠标滑过头像时旋转360° */
+.avatar-img img:hover {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+}
+.avatar-img img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}
+#aside-content .card-info {
+  padding: 0 0 20px !important;
+}
+#aside-content .card-info>div:not(:first-child) {
+  padding: 0 20px;
+}
+#aside-content .card-info #card-info-btn {
+  margin: 0 20px;
+}
+.is-center>.avatar-img {
+  width: 100%;
+  height: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+}
+#aside-content .card-info .author-info__name {
+  padding: 5px 0;
+}
+#aside-content .card-info .card-info-data {
+  margin: 0.2rem 0 0.2rem;
+}
+/* ------------------------------------------------- */
+
+/* ----------------------------------------------------- */
+/* 蝴蝶振翅动效 */
+/*iconfont默认样式*/
+.icon {
+  width: 1.75em;
+  height: 1.75em;
+  vertical-align: -0.52em;
+  fill: currentColor;
+  overflow: hidden;
+}
+/* 蝴蝶振翅动画 */
+#aside-content .card-info .author-info__description svg {
+  animation: butterfly 1s linear infinite alternate;
+}
+
+@keyframes butterfly {
+  from {
+    transform: rotateY(70deg);
+  }
+
+  to {
+    transform: rotateY(0deg);
+  }
+}
+/* ------------------------------------------------------ */
+
+a {
+  text-decoration: none!important;
+}
+#footer{
+    background: transparent;
+}
+
+#footer-wrap{
+    color: #000;
+}
+#footer-wrap .footer_custom_text a{
+    color: #000!important;
+}
+
+/* 背景动态渐变 */
+#body-wrap {
+    overflow: hidden!important;
+    /* 颜色搭配1 */
+    background: -webkit-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: -moz-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: -o-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: -ms-linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* 颜色搭配2 */
+    /* background: -webkit-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -moz-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -o-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: -ms-linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD);
+    background: linear-gradient(125deg, #E4FFCD, #6DD5FA, #2980B9, #E4FFCD); */
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+/* 顶部背景图调整[解决index_top_img_height: full screen不生效] */
+header#page-header {
+    height: 100vh;
+}
+
+
+/* 鼠标样式 */
+body {
+    cursor: url(https://cdn.jsdelivr.net/gh/constown/HexoCustomFile/public/cursors/default.cur),
+      default;
+  }
+  a,
+  img {
+    cursor: url(https://cdn.jsdelivr.net/gh/constown/HexoCustomFile/public/cursors/pointer.cur),
+      default;
+  }
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: rgba(73, 177, 245, 0.2);
+    border-radius: 2em;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #49b1f5;
+    background-image: -webkit-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.4) 25%,
+      transparent 25%,
+      transparent 50%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.4) 75%,
+      transparent 75%,
+      transparent
+    );
+    border-radius: 2em;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background-color: transparent;
+  }
+
+/* ------------------------------------------------------------------- */
+/* 鼠标选中文字后改变背景色与文字颜色（鼠标选中文本时的颜色） */
+/* webkit, opera, IE9 （谷歌浏览器）*/
+::selection {
+    color: #fff;
+    background: #49b1f5;
+}
+/* mozilla firefox（火狐浏览器） */
+::-moz-selection {
+    color: #fff;
+    background-color: #49b1f5;
+}
+/* ------------------------------------------------------------------- */
+
+/* 文章页背景 */
+.layout_post>#post {
+    /* 以下代表白色透明度为0.3 */
+    background: rgba(255,255,255,.5);
+  }
+/* 所有背景（包括首页卡片、文章页、页面页等） */
+#aside-content .card-widget, #recent-posts>.recent-post-item, .layout_page>div:first-child:not(.recent-posts), .layout_post>#page, .layout_post>#post, .read-mode .layout_post>#post{
+    /* 以下代表白色透明度为0.3 */
+    background: rgba(255,255,255,.5)!important;
+}
+/* 去除那年今日内部自带的背景色 */
+.history_slide {
+    background: transparent!important;
+}
+/* aside-list-item去除下边框 */
+#aside-content .aside-list>.aside-list-item:not(:last-child) {
+    border-bottom: 0!important;
+}
+
+/* -------------------------------------------------------------------- */
+/* 背景动态渐变方法 */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* loading process bar */
+.pace {
+    -webkit-pointer-events: none;
+    pointer-events: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    z-index: 2;
+    position: fixed;
+    margin: auto;
+    top: 4px;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border: 1px solid #fff;
+    border-radius: 8px;
+    width: 4rem;
+    background: #eaecf2;
+    overflow: hidden;
+}
+
+.pace-inactive .pace-progress {
+    opacity: 0;
+    transition: .3s ease-in
+}
+
+.pace.pace-inactive {
+    opacity: 0;
+    transition: .3s;
+    top: -8px
+}
+
+.pace .pace-progress {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /*max-width: 300px;*/
+    position: fixed;
+    z-index: 2;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 100%;
+    height: 100%;
+    width: 100%;
+    /*background: skyblue;*/
+    /*fallbackforoldbrowsers*/
+    background: -webkit-linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+    /*Chrome10-25,Safari5.1-6*/
+    background: linear-gradient(to right, rgb(18, 194, 233), rgb(196, 113, 237), rgb(246, 79, 89));
+    /*W3C,IE10+/Edge,Firefox16+,Chrome26+,Opera12+,Safari7+*/
+    animation: gradient 2s ease infinite;
+    -webkit-animation: gradient 2s ease infinite;
+    background-size: 200%;
+}
+/* ------------------------------------------------------------------------ */
+
+
+/* ------------------------------------------------------------------------- */
+/* 最新文章图标之前注意加上这个 */
+#recent-posts>.recent-post-item {
+    position: relative;
+}
+
+/* 最新文章图标 */
+.newPost-left,
+.newPost-right {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    padding: 0 15px;
+    background-color: #49b1f5;
+    /* 渐变背景 */
+    /* background: linear-gradient(180deg, #3ca5f6 0%, #a86af9 100%); */
+    /* background: -webkit-linear-gradient(180deg, #3ca5f6 0%, #a86af9 100%); */
+    border-radius: 0 0 10px 10px;
+}
+
+.newPost-left {
+    left: 15px;
+}
+
+.newPost-right {
+    right: 15px;
+}
+
+/* 去除左上角标题 */
+#site-name {
+    display: none;
+}
+/* --------------------------------------------------------------------------- */
+
+/* -------------------------------------------------------------------------- */
+/* 弹窗美化 */
+.snackbar-container {
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    border: 5px solid rgba(0, 255, 255);
+}
+/* -------------------------------------------------------------------------- */
+
+
+/* ---------------------------------------------- */
+/* 给左上角添加自定义边框跑马灯 */
+#outer {
+    width: 120px;
+    height: 60px;
+    overflow: hidden;
+    border-radius: 6px;
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav_bg {
+    width: 240px;
+    height: 60px;
+    /* background-image: linear-gradient(301deg, #69EACB 0%, #EACCF8 30%, #6654F1 60%,#69EACB 90%); */
+    background: linear-gradient(115deg, #4fcf70, #fad648, #a767e5, #12bcfe, #44ce7b);
+    background-size: 50% 100%;
+    position: absolute;
+}
+
+#outer .nav_bg {
+    animation: move 1s infinite;
+    animation-timing-function: linear;
+    /* Safari and Chrome */
+    -webkit-animation: move 1s infinite;
+    -webkit-animation-timing-function: linear;
+}
+
+@keyframes move {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -120px;
+    }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes move {
+    from {
+        left: 0px;
+    }
+
+    to {
+        left: -120px;
+    }
+}
+
+#navChild {
+    width: 110px;
+    height: 50px;
+    background: rgba(0, 0, 0, .9);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 3px;
+}
+/* ------------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------------------------- */
+/* 鼠标滑过卡片添加外阴影 */
+/* 定义一个通用属性，不止一处使用该属性，使用var()函数调用，这里主要覆盖原来的即可 */
+:root {
+    --card-hover-box-shadow: 0 0 5px 5px rgba(0, 102, 255, 0.5);
+}
+
+/* 优化分页样式 */
+#pagination .page-number.current {
+    background: #49b1f5;
+}
+
+#pagination .page-number,#pagination .pagination .prev,#pagination .pagination .next {
+    display: inline-block;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0 .2rem;
+    border: 1px solid rgba(221, 221, 221, .4);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    cursor: pointer;
+}
+
+#pagination .pagination .space {
+    display: inline-block;
+    min-width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    margin: 0 .2rem;
+    cursor: pointer;
+}
+
+#pagination .page-number:hover,#pagination .pagination .prev:hover,#pagination .pagination .next:hover {
+    color: #fff;
+    background: #49b1f5;
+}
+
+#pagination .pagination a {
+    color: #000;
+}
+
+/* 右下角设置和回到顶部样式优化 */
+#rightside>div>button,#rightside>div>a {
+    width: 35px;
+    height: 35px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+#rightside div button{
+    margin-bottom: 5px;
+}
+#rightside div button:last-of-type{
+    margin-top: 5px;
+}
+/* --------------------------------------------------- */
+
+/* ------------添加文章评论输入提醒-------------- */
+/* 设置文字内容 :nth-child(1)的作用是选择第几个 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(1):before {
+    content: '输入QQ号会自动获取昵称和头像🐧';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(2):before {
+    content: '收到回复将会发送到您的邮箱📧';
+}
+
+.el-input.el-input--small.el-input-group.el-input-group--prepend:nth-child(3):before {
+    content: '可以通过昵称访问您的网站🔗';
+}
+
+/* 当用户点击输入框时显示 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::before,
+.el-input.el-input--small.el-input-group.el-input-group--prepend:focus-within::after {
+    display: block;
+}
+
+/* 主内容区 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend::before {
+    /* 先隐藏起来 */
+    display: none;
+    /* 绝对定位 */
+    position: absolute;
+    /* 向上移动60像素 */
+    top: -60px;
+    /* 文字强制不换行，防止left:50%导致的文字换行 */
+    white-space: nowrap;
+    /* 圆角 */
+    border-radius: 10px;
+    /* 距离左边50% */
+    left: 50%;
+    /* 然后再向左边挪动自身的一半，即可实现居中 */
+    transform: translate(-50%);
+    /* 填充 */
+    padding: 14px 18px;
+    background: #444;
+    color: #fff;
+}
+
+/* 小角标 */
+.el-input.el-input--small.el-input-group.el-input-group--prepend::after {
+    display: none;
+    content: '';
+    position: absolute;
+    /* 内容大小（宽高）为0且边框大小不为0的情况下，每一条边（4个边）都是一个三角形，组成一个正方形。
+    我们先将所有边框透明，再给其中的一条边添加颜色就可以实现小三角图标 */
+    border: 12px solid transparent;
+    border-top-color: #444;
+    left: 50%;
+    transform: translate(-50%, -48px);
+}
+/* ------------------------------------------------------------- */
+
+/* ------------------------------------------------------------------------ */
+/* 侧边栏美化 */
+/* Follow me美化 */
+#aside-content .card-info #card-info-btn {
+    margin-top: 0!important;
+}
+#aside-content .card-info .button--animated {
+    border-radius: 16.5px;
+    -webkit-border-radius: 16.5px;
+    -moz-border-radius: 16.5px;
+    -ms-border-radius: 16.5px;
+    -o-border-radius: 16.5px;
+    overflow: hidden;
+}
+#aside-content .card-info .button--animated:before {
+    border-radius: 16.5px;
+    -webkit-border-radius: 16.5px;
+    -moz-border-radius: 16.5px;
+    -ms-border-radius: 16.5px;
+    -o-border-radius: 16.5px;
+}
+
+/* 侧边栏最新文章美化 */
+#aside-content .aside-list>.aside-list-item .thumbnail {
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+/* ------------------------------------------------------------------------ */
+
+/* ---------------------------------------------------------------- */
+/* twikoo魔改 */
+#twikoo .el-textarea textarea {
+    min-height: 130px !important;
+    background-size: 90px;
+}
+.el-textarea__inner:focus {
+    background-image: url(https://img.coding327.top/blogImg/10075.png) !important;
+}
+#twikoo .tk-content {
+  background: rgb(235 235 235 / 60%);
+  padding: 0px 15px;
+  border-radius: 10px;
+}
+.tk-replies {
+  max-height: 230px;
+}
+.tk-comments-container>.tk-comment>.tk-main>.tk-expand {
+  margin-top: 8px;
+  color: #fff;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background: #409eff;
+}
+.tk-comments-container>.tk-comment>.tk-main>.tk-expand:hover {
+  color: #000;
+  background-color: rgba(0, 0, 0, 0.13);
+}
+#aside-content .card-info .card-info-social-icons,
+#bber-talk .talk-list,
+.tk-content * {
+  margin: 0;
+}
+/* ---------------------------------------------------------------- */
+
+/* ---------------------------------------------------------------- */
+/* 图片模糊渐变清晰 */
+/*3s为加载动画的时间，1为加载动画的次数，ease-in-out为动画效果*/
+#page-header {
+  -webkit-animation: imgblur 3s 1 ease-in-out;
+  animation: imgblur 3s 1 ease-in-out;
+}
+
+@keyframes imgblur {
+  0% {
+    filter: blur(5px);
+  }
+
+  100% {
+    filter: blur(0px);
+  }
+}
+
+/*适配使用-webkit内核的浏览器 */
+@-webkit-keyframes imgblur {
+  0% {
+    -webkit-filter: blur(5px);
+  }
+
+  100% {
+    -webkit-filter: blur(0px);
+  }
+}
+/* ---------------------------------------------------------------- */
+
+/* ---------------------------------------------------------- */
+/* 文章内标题与图标间距调整 */
+#article-container h2 a {
+  padding-left: 8px;
+}
+/* 图片边框 */
+#article-container p a img {
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+/* 版权 */
+#post .post-copyright {
+  border-color: skyblue;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+/* 上一篇下一篇 */
+#pagination.pagination-post {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
+/* ---------------------------------------------------------- */
